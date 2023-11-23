@@ -126,11 +126,9 @@ const aboutData = [
   },
 ];
 
-import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-import CountUp from "react-countup";
 
 const About = () => {
   const [index, setIndex] = useState(0);
@@ -147,9 +145,9 @@ const About = () => {
       />
       <div
         className="container mx-auto h-full flex 
-      flex-col items-center xl:flex-row gap-x-6"
+      flex-col items-center xl:flex-row gap-x-6 overflow-y-scroll"
       >
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center ">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -157,19 +155,19 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            Problemas <span className="text-accent">desafiadores</span> geram
+            soluções inovadoras<span className="text-accent">.</span>
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 "
           >
-            10 years ago, I began freelancing as a developer. Since then I've
-            done remote work for agencies, counsulted for startups, and
-            collaborated on digital products for business and consumenr use.
+            4 anos atrás, iniciei meu curso técnico em programação. Desde então,
+            me dediquei à criação de soluções digitais para web e mobile,
+            trabalhando e desenvolvendo produtos para uso empresarial e pessoal.
           </motion.p>
         </div>
         <motion.div
@@ -179,23 +177,26 @@ const About = () => {
           exit="hidden"
           className="flex flex-col w-full xl:max-w-[60%] h-[480px]"
         >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemIndex) => {
-              return (
-                <div
-                  key={itemIndex}
-                  className={`${
-                    index === itemIndex &&
-                    "text-accent after:w-[100%] after:bg-accent after:duration-300"
-                  }cursor-pointer capitalize xl:text-lg relative after:w-8 
+          <div className="overflow-x-scroll">
+            <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+              {aboutData.map((item, itemIndex) => {
+                return (
+                  <div
+                    key={itemIndex}
+                    className={`${
+                      index === itemIndex &&
+                      "text-accent after:w-[100%] after:bg-accent after:duration-300"
+                    }cursor-pointer capitalize xl:text-lg relative after:w-8 
                   after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                  onClick={() => setIndex(itemIndex)}
-                >
-                  {item.title}
-                </div>
-              );
-            })}
+                    onClick={() => setIndex(itemIndex)}
+                  >
+                    {item.title}
+                  </div>
+                );
+              })}
+            </div>
           </div>
+
           <div
             className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 
           items-center xl:items-start"

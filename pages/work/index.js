@@ -1,4 +1,3 @@
-import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
@@ -16,7 +15,7 @@ const Work = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 xl:mt-8"
+              className="h2 xl:mt-12"
             >
               Meus Projetos<span className="text-accent">.</span>
             </motion.h2>
@@ -27,9 +26,12 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-2-[400px] mx-auto lg:mx-0"
             >
-              Lorem Ipsum dolor sit amet consectetur adipisicing elit. Itaque
-              nostrum quan reprehenderit vero, tenetur voluptatem nulla aut
-              aspernatur dolores ut.
+              Alguns dos meus projetos pessoais e profissionais na área de
+              desenvolvimento de software. São aplicações que envolvem
+              diferentes tecnologias, linguagens e frameworks. Alguns dos
+              projetos são open source e estão disponíveis no meu GitHub. Outros
+              são projetos comerciais ou acadêmicos que realizo como freelancer
+              ou estudante.
             </motion.p>
           </div>
           <motion.div
@@ -44,7 +46,6 @@ const Work = () => {
           </motion.div>
         </div>
       </div>
-      <Bulb />
     </div>
   );
 };

@@ -1,16 +1,9 @@
 // icons
-import {
-  HiHome,
-  HiUser,
-  HiViewColumns,
-  HiRectangleGroup,
-  HiChatBubbleBottomCenterText,
-  HiEnvelope,
-} from "react-icons/hi2";
+import { HiHome, HiUser, HiViewColumns, HiEnvelope } from "react-icons/hi2";
 
 // nav data
 export const navData = [
-  { name: "Home", path: "/", icon: <HiHome /> },
+  { name: "Início", path: "/", icon: <HiHome /> },
   { name: "Sobre", path: "/about", icon: <HiUser /> },
   { name: "Projetos", path: "/work", icon: <HiViewColumns /> },
   {

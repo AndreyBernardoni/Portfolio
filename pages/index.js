@@ -1,7 +1,5 @@
-import Image from "next/image";
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
-import Avatar from "../components/Avatar";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
@@ -24,8 +22,8 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br /> Into{" "}
-            <span className="text-accent">Digital Reality</span>
+            Transformando Ideias <br /> Em{" "}
+            <span className="text-accent">Realidade</span>
           </motion.h1>
           <motion.p
             variants={fadeIn("down", 0.3)}
@@ -34,9 +32,9 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem Ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            nostrum quan reprehenderit vero, tenetur voluptatem nulla aut
-            aspernatur dolores ut.
+            Desenvolver não é apenas criar código, mas também solucionar
+            problemas, inovar e colaborar. Seja qual for a ideia, você pode
+            transformá-la em realidade<span className="text-accent">.</span>
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />

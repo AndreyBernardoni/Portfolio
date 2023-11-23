@@ -11,7 +11,7 @@ const ProjectsBtn = () => {
         items-center bg-circleStar bg-cover bg-center bg-no-repeat group"
       >
         <Image
-          src={"/rounded-text.png"}
+          src={"/txt.png"}
           width={141}
           height={148}
           className="animate-spin-slow w-full h-full max-w-[141px] 
