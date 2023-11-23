@@ -1,9 +1,43 @@
+import { useState } from "react";
 import Circles from "../../components/Circles";
 import { BsArrowRight } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Sending");
+    let data = {
+      name,
+      email,
+      subject,
+      message,
+    };
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+        setBody("");
+        setSubject("");
+      }
+    });
+  };
+
   return (
     <div className="h-full bg-primary/30">
       <div
@@ -20,19 +54,45 @@ const Contact = () => {
                 type="text"
                 placeholder="Seu Nome"
                 className="input"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                name="nome"
               ></input>
               <input
                 type="email"
                 placeholder="Seu Email"
                 className="input"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                name="email"
               ></input>
             </div>
-            <input type="text" placeholder="Assunto" className="input"></input>
-            <textarea placeholder="Mensagem" className="textarea"></textarea>
+            <input
+              type="text"
+              placeholder="Assunto"
+              className="input"
+              onChange={(e) => {
+                setSubject(e.target.value);
+              }}
+              name="assunto"
+            ></input>
+            <textarea
+              placeholder="Mensagem"
+              className="textarea"
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+              name="mensagem"
+            ></textarea>
             <button
               className="btn rounded-full border border-white/50 
             max-w-[170px] px-8 transition-all duration-300 flex items-center 
             justify-center overflow-hidden hover:border-accent group"
+              onClick={(e) => {
+                handleSubmit(e);
+              }}
             >
               <span
                 className="group-hover:-translate-y-[120%] group-hover:opacity-0
@@ -48,6 +108,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
+        <Circles />
       </div>
     </div>
   );
