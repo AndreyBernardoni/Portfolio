@@ -204,7 +204,7 @@ const About = () => {
               return (
                 <div
                   key={itemIndex}
-                  className="mb-5 flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                  className="mb-2 flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
                 >
                   <div className="font-light mb-2 md:mb-0">{item.title}</div>
                   <div className="hidden md:flex">-</div>
