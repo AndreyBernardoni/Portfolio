@@ -145,7 +145,7 @@ const About = () => {
       />
       <div
         className="container mx-auto h-full flex 
-      flex-col items-center xl:flex-row gap-x-6 overflow-y-scroll"
+      // flex-col items-center xl:flex-row gap-x-6 md:overflow-y-scroll lg:overflow-hidden"
       >
         <div className="flex-1 flex flex-col justify-center ">
           <motion.h2
@@ -177,7 +177,7 @@ const About = () => {
           exit="hidden"
           className="flex flex-col w-full xl:max-w-[60%] h-[480px]"
         >
-          <div className="overflow-x-scroll">
+          <div className=":overflow-x-scroll lg:overflow-hidden">
             <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
               {aboutData.map((item, itemIndex) => {
                 return (

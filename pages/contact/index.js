@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Circles from "../../components/Circles";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsRepeat } from "react-icons/bs";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -9,33 +11,64 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const MySwal = withReactContent(Swal);
+
+  // Função para disparar o alerta
+  const showAlert = (title, text, icon, buttonText) => {
+    MySwal.fire({
+      title: title,
+      text: text,
+      icon: icon,
+      confirmButtonText: buttonText,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Sending");
-    let data = {
-      name,
-      email,
-      subject,
-      message,
-    };
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Response received");
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        setSubmitted(true);
-        setName("");
-        setEmail("");
-        setBody("");
-        setSubject("");
-      }
-    });
+    if (!name || !email || !subject || !message) {
+      showAlert(
+        "Erro!",
+        "Todos os campos devem ser preenchidos.",
+        "error",
+        "Ok"
+      );
+      return; // Interrompe a função se algum campo estiver vazio
+    } else {
+      console.log("Sending");
+      let data = {
+        name,
+        email,
+        subject,
+        message,
+      };
+      fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        console.log("Response received");
+        if (res.status === 200) {
+          showAlert("Sucesso!", "Sua mensagem foi enviada.", "success", "Ok");
+          console.log("Response succeeded!");
+          setSubmitted(true);
+          setName("");
+          setEmail("");
+          setSubject("");
+          setMessage("");
+        } else {
+          showAlert(
+            "Erro!",
+            "Não foi possível enviar a mensagem.",
+            "error",
+            "Ok"
+          );
+        }
+        console;
+      });
+    }
   };
 
   return (
@@ -46,7 +79,7 @@ const Contact = () => {
       >
         <div className="flex flex-col w-full max-w-[700px]">
           <h2 className="h2 text-center mb-12">
-            Enviar <span className="text-accent">E-mail.</span>
+            Enviar E-mail<span className="text-accent">.</span>
           </h2>
           <form className="flex-1 flex flex-col gap-6 w-full mx-auto">
             <div className="flex gap-x-6 w-full">
