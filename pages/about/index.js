@@ -143,12 +143,9 @@ const About = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
+        className="hidden bottom-0 xl:flex absolute  -left-[370px]"
       />
-      <div
-        className="container mx-auto h-full flex 
-      // flex-col items-center xl:flex-row gap-x-6 md:overflow-y-scroll lg:overflow-hidden"
-      >
+      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 overflow-y-scroll lg:overflow-hidden">
         <div className="flex-1 flex flex-col justify-center ">
           <motion.h2
             variants={fadeIn("right", 0.2)}
@@ -179,7 +176,7 @@ const About = () => {
           exit="hidden"
           className="flex flex-col w-full xl:max-w-[60%] h-[480px]"
         >
-          <div className=":overflow-x-scroll lg:overflow-hidden">
+          <div className="overflow-x-scroll">
             <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
               {aboutData.map((item, itemIndex) => {
                 return (
@@ -207,7 +204,7 @@ const About = () => {
               return (
                 <div
                   key={itemIndex}
-                  className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                  className="mb-5 flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
                 >
                   <div className="font-light mb-2 md:mb-0">{item.title}</div>
                   <div className="hidden md:flex">-</div>
