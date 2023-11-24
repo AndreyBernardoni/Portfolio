@@ -35,51 +35,53 @@ const aboutData = [
       {
         title: "Desenvolvimento Web",
         icons: [
-          <SiDotnet />,
-          <FaJs />,
-          <FaReact />,
-          <FaNodeJs />,
-          <SiNextdotjs />,
+          <SiDotnet key={1} />,
+          <FaJs key={2} />,
+          <FaReact key={3} />,
+          <FaNodeJs key={4} />,
+          <SiNextdotjs key={5} />,
         ],
       },
       {
         title: "Desenvolvimento Mobile",
-        icons: [<SiFirebase />, <SiDart />, <SiFlutter />],
+        icons: [
+          <SiFirebase key={6} />,
+          <SiDart key={7} />,
+          <SiFlutter key={8} />,
+        ],
       },
       {
         title: "Versionamento de Código",
-        icons: [<FaGit />, <FaGithub />, <SiAzuredevops />],
+        icons: [
+          <FaGit key={9} />,
+          <FaGithub key={10} />,
+          <SiAzuredevops key={11} />,
+        ],
       },
       {
         title: "Bancos de dados",
         icons: [
-          <SiMicrosoftsqlserver />,
-          <SiMongodb />,
-          <SiPostgresql />,
-          <SiMysql />,
+          <SiMicrosoftsqlserver key={12} />,
+          <SiMongodb key={13} />,
+          <SiPostgresql key={14} />,
+          <SiMysql key={15} />,
         ],
       },
       {
         title: "Sistemas Operacionais",
-        icons: [<FaWindows />, <SiLinux />, <SiMacos />],
+        icons: [
+          <FaWindows key={16} />,
+          <SiLinux key={17} />,
+          <SiMacos key={18} />,
+        ],
       },
       {
         title: "Provedores em nuvem",
-        icons: [<SiMicrosoftazure />, <FaAws />, <SiOracle />],
-      },
-    ],
-  },
-  {
-    title: "Formação",
-    info: [
-      {
-        title: "Ensino médio - Instituto Federal Sul-rio-grandense",
-        stage: "2020-2023",
-      },
-      {
-        title:
-          "Téc. em Informática para internet - Instituto Federal Sul-rio-grandense",
-        stage: "2020-2023",
+        icons: [
+          <SiMicrosoftazure key={19} />,
+          <FaAws key={20} />,
+          <SiOracle key={21} />,
+        ],
       },
     ],
   },
