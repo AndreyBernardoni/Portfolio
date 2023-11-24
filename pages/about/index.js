@@ -145,7 +145,7 @@ const About = () => {
         exit="hidden"
         className="hidden bottom-0 xl:flex absolute  -left-[370px]"
       />
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 overflow-y-scroll lg:overflow-hidden">
+      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 overflow-y-scroll">
         <div className="flex-1 flex flex-col justify-center ">
           <motion.h2
             variants={fadeIn("right", 0.2)}
@@ -174,7 +174,7 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[60%] h-[480px]"
+          className="flex flex-col w-full xl:max-w-[60%] h-[600px]"
         >
           <div className="overflow-x-scroll">
             <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
