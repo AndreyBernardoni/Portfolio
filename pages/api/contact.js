@@ -18,9 +18,9 @@ export default function (req, res) {
   const mailData = {
     from: process.env.EMAIL,
     to: process.env.EMAIL,
-    subject: `Message From ${req.body.name} | ${req.body.subject}`,
+    subject: `${req.body.name} | ${req.body.subject}`,
     text: req.body.message + " | Sent from: " + req.body.email,
-    html: `<div>${req.body.message}</div><p>Sent from:
+    html: `<div>${req.body.message}</div><p>Entre em contato pelo email:
     ${req.body.email}</p>`,
   };
 
